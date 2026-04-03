@@ -2848,3 +2848,13 @@ h6 {
 .switch-wrap p {
   margin: 0;
 }
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.25s;
+}
