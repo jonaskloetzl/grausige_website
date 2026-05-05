@@ -879,6 +879,14 @@ h6 {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  white-space: nowrap;
+}
+
+.about-btn {
+  background: #000;
+  border: 1px solid #ff0000;
+  color: #743a3a;
+  white-space: nowrap;
 }
 
 .genric-btn:focus {
@@ -921,6 +929,14 @@ h6 {
 
 .genric-btn.arrow span {
   margin-left: 10px;
+  -webkit-transition: transform 0.3s ease 0s;
+  -moz-transition: transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+}
+
+.genric-btn.arrow:hover span {
+  transform: translateX(6px);
 }
 
 .genric-btn.default {
@@ -2849,7 +2865,7 @@ h6 {
   margin: 0;
 }
 
-.arrow {
+.collapse-arrow {
   display: inline-block;
   width: 0;
   height: 0;
@@ -2857,4 +2873,8 @@ h6 {
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   transition: transform 0.25s;
+}
+
+.mono {
+  font-family: monospace;
 }
