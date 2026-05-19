@@ -20,7 +20,6 @@
     <title></title>
 
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 
         @media only screen and (min-width: 620px) {
@@ -123,14 +122,35 @@
             color: #ffffff;
         }
 
-        /* On phones, drop the floats so images stack full-width above text */
+        /* Two-column responsive: on phones, the image/text cells stack full width */
         @media (max-width: 480px) {
-            .float-img {
-                float: none !important;
+
+            .two-col,
+            .two-col>tbody,
+            .two-col>tbody>tr {
                 display: block !important;
-                margin: 0 auto 14px auto !important;
                 width: 100% !important;
-                max-width: 320px !important;
+            }
+
+            .two-col>tbody>tr>td {
+                display: block !important;
+                width: 100% !important;
+                padding: 0 0 14px 0 !important;
+                box-sizing: border-box !important;
+            }
+
+            .two-col-gap {
+                display: none !important;
+            }
+
+            .two-col-img {
+                text-align: center !important;
+            }
+
+            .two-col-img img {
+                margin: 0 auto !important;
+                max-width: 100% !important;
+                width: 100% !important;
                 height: auto !important;
             }
 
@@ -184,7 +204,7 @@
 <body class="clean-body u_body"
     style="margin:0;padding:0;-webkit-text-size-adjust:100%;background-color:#4d4c4c;color:#000000;">
 
-    <!-- PREHEADER (hidden inbox preview text) -->
+    <!-- PREHEADER -->
     <div
         style="display:none;font-size:1px;color:#4d4c4c;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
         Premiere am 23. Mai in Nusplingen — neues Programm „Almost like being in love!"
@@ -205,7 +225,7 @@
                         <tbody>
                             <tr>
                                 <td align="center"
-                                    style="padding:8px 10px;mso-line-height-rule:exactly;line-height:140%;font-family:arial,helvetica,sans-serif;font-size:10px;color:#ffffff;">
+                                    style="padding:8px 10px;mso-line-height-rule:exactly;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#ffffff;">
                                     <a rel="noopener" href="https://www.drgrausig.de/newsletter/2025/04_claude.html"
                                         target="_blank" style="color:#ffffff;text-decoration:underline;">Diese E-Mail im
                                         Browser lesen</a>
@@ -223,11 +243,10 @@
                                     <div style="background-color:#ececec;height:100%;width:100% !important;">
                                         <div class="v-col-border"
                                             style="box-sizing:border-box;height:100%;padding:10px;background-color:#ececec;">
-
                                             <div style="background-color:#ffffff;padding:20px 20px 30px 20px;">
 
                                                 <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                    border="0" style="font-family:arial,helvetica,sans-serif;">
+                                                    border="0" style="font-family:Arial,Helvetica,sans-serif;">
                                                     <tbody>
                                                         <tr>
                                                             <td style="padding:10px;" align="left">
@@ -241,13 +260,13 @@
                                                 </table>
 
                                                 <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                    border="0" style="font-family:arial,helvetica,sans-serif;">
+                                                    border="0" style="font-family:Arial,Helvetica,sans-serif;">
                                                     <tbody>
                                                         <tr>
                                                             <td style="padding:10px 10px 0px 13px;mso-line-height-rule:exactly;"
                                                                 align="left">
                                                                 <h1
-                                                                    style="margin:0;padding:0;line-height:140%;font-size:15px;font-weight:400;color:#000000;font-family:arial,helvetica,sans-serif;">
+                                                                    style="margin:0;padding:0;line-height:140%;font-size:15px;font-weight:400;color:#000000;font-family:Arial,Helvetica,sans-serif;">
                                                                     Liebeskummer? – Frag' doch mal die Maus!
                                                                 </h1>
                                                             </td>
@@ -256,13 +275,13 @@
                                                 </table>
 
                                                 <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                    border="0" style="font-family:arial,helvetica,sans-serif;">
+                                                    border="0" style="font-family:Arial,Helvetica,sans-serif;">
                                                     <tbody>
                                                         <tr>
                                                             <td style="padding:10px;mso-line-height-rule:exactly;"
                                                                 align="left">
                                                                 <h1
-                                                                    style="margin:0;padding:0;line-height:100%;font-size:41px;font-weight:700;font-family:arial,helvetica,sans-serif;">
+                                                                    style="margin:0;padding:0;line-height:100%;font-size:41px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
                                                                     Dr Grausig &amp; the Magictones
                                                                 </h1>
                                                             </td>
@@ -271,7 +290,6 @@
                                                 </table>
 
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -297,14 +315,14 @@
 
                                             <table id="u_content_heading_4" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:25px 10px 10px 30px;font-family:arial,helvetica,sans-serif;mso-line-height-rule:exactly;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:25px 10px 10px 30px;font-family:Arial,Helvetica,sans-serif;mso-line-height-rule:exactly;"
                                                             align="left">
                                                             <h1 class="v-text-align v-font-size"
-                                                                style="margin:0;padding:0;line-height:100%;text-align:left;word-wrap:break-word;font-size:28px;font-weight:400;font-family:arial,helvetica,sans-serif;">
+                                                                style="margin:0;padding:0;line-height:100%;text-align:left;word-wrap:break-word;font-size:28px;font-weight:400;font-family:Arial,Helvetica,sans-serif;">
                                                                 Dr Grausig Newsletter 01/2026
                                                             </h1>
                                                         </td>
@@ -314,11 +332,11 @@
 
                                             <table id="u_content_divider_1" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 30px;font-family:arial,helvetica,sans-serif;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 30px;font-family:Arial,Helvetica,sans-serif;"
                                                             align="left">
                                                             <table height="0px" align="left" border="0" cellpadding="0"
                                                                 cellspacing="0" width="61%"
@@ -337,154 +355,191 @@
                                                 </tbody>
                                             </table>
 
-                                            <!-- Body copy -->
+                                            <!-- BODY COPY (now uses dedicated tables per logical block) -->
                                             <table id="u_content_text_1" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 30px 10px 30px;font-family:arial,helvetica,sans-serif;mso-line-height-rule:exactly;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 30px 10px 30px;font-family:Arial,Helvetica,sans-serif;mso-line-height-rule:exactly;font-size:14px;line-height:140%;color:#000000;"
                                                             align="left">
 
-                                                            <div class="v-text-align v-font-size"
-                                                                style="font-size:14px;line-height:140%;text-align:left;word-wrap:break-word;">
+                                                            <!-- 1) Greeting (cursive). For brand consistency, consider replacing this <p> with an <img> of the line. -->
+                                                            <p
+                                                                style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Monotype Corsiva','Brush Script MT','Lucida Handwriting','Apple Chancery','Snell Roundhand',cursive,Arial,sans-serif;font-size:30px;color:#0197c9;">
+                                                                Liebe Freunde gepflegter Jazzmusik,
+                                                            </p>
 
-                                                                <p
-                                                                    style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Brush Script MT','Snell Roundhand',cursive;font-size:30px;color:#0197c9;">
-                                                                    Liebe Freunde gepflegter Jazzmusik,
-                                                                </p>
+                                                            <div
+                                                                style="line-height:14px;font-size:14px;mso-line-height-rule:exactly;">
+                                                                &nbsp;</div>
 
-                                                                <div
-                                                                    style="line-height:14px;font-size:14px;mso-line-height-rule:exactly;">
-                                                                    &nbsp;</div>
+                                                            <!-- 2) Opening paragraph, full width -->
+                                                            <p
+                                                                style="margin:0 0 14px 0;padding:0;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                                                                wie Sie sicherlich wissen, haben es Mäuse in allen
+                                                                Varianten dem Grausigen und seinen Mitmusikern angetan.
+                                                                Nicht nur DIE Maus, die als die Band seit Anbeginn
+                                                                begleitende illuminierte Plastikfigur schon mehr als 50
+                                                                Einsätze auf ihrem Mäusebuckel hat, oder die von Charles
+                                                                Darwin entdeckte singende Baumwollmaus (treue Leser
+                                                                dieses Newsletters erinnern sich: Sie singt in Bb-Dur) –
+                                                                nein: Seit das Fachblatt <i>Current Biology</i> einen
+                                                                Artikel über Mäuseherzschmerz (und die Gegenstrategien
+                                                                der possierlichen Nager) publiziert hat,<sup>1</sup>
+                                                                wissen <strong style="color:#0197c9;">Dr Grausig &amp;
+                                                                    the Magictones</strong>: Die Präriewühlmaus
+                                                                <i>Microtus ochrogaster</i> hat was gegen Liebeskummer!
+                                                            </p>
 
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    wie Sie sicherlich wissen, haben es Mäuse in allen
-                                                                    Varianten dem Grausigen und seinen Mitmusikern
-                                                                    angetan. Nicht nur DIE Maus, die als die Band seit
-                                                                    Anbeginn begleitende illuminierte Plastikfigur schon
-                                                                    mehr als 50 Einsätze auf ihrem Mäusebuckel hat, oder
-                                                                    die von Charles Darwin entdeckte singende
-                                                                    Baumwollmaus (treue Leser dieses Newsletters
-                                                                    erinnern sich: Sie singt in Bb-Dur) – nein: Seit das
-                                                                    Fachblatt <i>Current Biology</i> einen Artikel über
-                                                                    Mäuseherzschmerz (und die Gegenstrategien der
-                                                                    possierlichen Nager) publiziert hat,<sup>1</sup>
-                                                                    wissen <strong style="color:#0197c9;">Dr Grausig
-                                                                        &amp; the Magictones</strong>: Die
-                                                                    Präriewühlmaus <i>Microtus ochrogaster</i> hat was
-                                                                    gegen Liebeskummer!
-                                                                </p>
+                                                            <!-- 3) TWO-COLUMN: Premiere poster LEFT | "Sollten Sie..." text RIGHT -->
+                                                            <table role="presentation" cellpadding="0" cellspacing="0"
+                                                                border="0" width="100%" class="two-col"
+                                                                style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="two-col-img" valign="top" width="240"
+                                                                            style="width:240px;padding:0 0 14px 0;">
+                                                                            <img src="https://www.drgrausig.de/newsletter_images/poster_friedhofskirche.jpg"
+                                                                                alt="Almost like being in love! – Premiere Sa., 23. Mai, 19:00, Alte Friedhofskirche St. Peter &amp; Paul, Nusplingen"
+                                                                                width="240"
+                                                                                style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;max-width:240px;width:240px;height:auto;">
+                                                                        </td>
+                                                                        <td class="two-col-gap" valign="top" width="16"
+                                                                            style="width:16px;font-size:1px;line-height:1px;">
+                                                                            &nbsp;</td>
+                                                                        <td class="two-col-text" valign="top"
+                                                                            style="padding:0 0 14px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:140%;">
+                                                                            <p
+                                                                                style="margin:0;padding:0;line-height:140%;">
+                                                                                Sollten Sie, liebe Leserin, lieber
+                                                                                Leser, gerade frisch ver- oder entliebt
+                                                                                sein (oder sich in irgendeinem
+                                                                                Beziehungsstatus dazwischen befinden),
+                                                                                haben <strong style="color:#0197c9;">Dr
+                                                                                    Grausig &amp; the
+                                                                                    Magictones</strong> etwas ganz
+                                                                                Besonderes für Sie: Das neue
+                                                                                Jahresprogramm <strong
+                                                                                    style="color:#c90101;">Almost like
+                                                                                    being in love!</strong> Der
+                                                                                Jazz-Standard aus dem Jahr 1947 steht
+                                                                                Pate für eine Reise durch die Welt der
+                                                                                Liebe (und die Geschichte des Jazz),
+                                                                                wobei <strong style="color:#0197c9;">Dr
+                                                                                    Grausig &amp; the
+                                                                                    Magictones</strong> die thematischen
+                                                                                wie musikalischen Grenzen (Sie ahnen es)
+                                                                                eher mit der Brechstange ausloten. Wie
+                                                                                immer erwartet Sie ein bunter Strauß an
+                                                                                Swing, Bebop, Soul, Funk und angejazzten
+                                                                                Pop-Titeln, mal gesungen, mal gehaucht,
+                                                                                mal instrumental; und wie immer stehen
+                                                                                für den Schlagzeuger und seine drei
+                                                                                Musiker die musikalische Qualität der
+                                                                                Titel und die Überzeugung, dass genau
+                                                                                diese Titel es verdient hätten,
+                                                                                bekannter zu sein, vor dem Heischen um
+                                                                                wohlfeilen Applaus, das so mancher
+                                                                                Dorffestcovercombo zu eigen ist.
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
 
-                                                                <!-- LEFT-FLOATED PREMIERE POSTER. Replace src with the actual poster image URL. -->
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    <img class="float-img"
-                                                                        src="https://www.drgrausig.de/newsletter_images/poster_friedhofskirche.jpg"
-                                                                        alt="Almost like being in love! – Premiere Sa., 23. Mai, 19:00, Alte Friedhofskirche St. Peter &amp; Paul, Nusplingen"
-                                                                        align="left" width="240"
-                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;margin:4px 16px 8px 0;max-width:240px;width:240px;height:auto;float:left;">
-                                                                    Sollten Sie, liebe Leserin, lieber Leser, gerade
-                                                                    frisch ver- oder entliebt sein (oder sich in
-                                                                    irgendeinem Beziehungsstatus dazwischen befinden),
-                                                                    haben <strong style="color:#0197c9;">Dr Grausig
-                                                                        &amp; the Magictones</strong> etwas ganz
-                                                                    Besonderes für Sie: Das neue Jahresprogramm <strong
-                                                                        style="color:#c90101;">Almost like being in
-                                                                        love!</strong> Der Jazz-Standard aus dem Jahr
-                                                                    1947 steht Pate für eine Reise durch die Welt der
-                                                                    Liebe (und die Geschichte des Jazz), wobei <strong
-                                                                        style="color:#0197c9;">Dr Grausig &amp; the
-                                                                        Magictones</strong> die thematischen wie
-                                                                    musikalischen Grenzen (Sie ahnen es) eher mit der
-                                                                    Brechstange ausloten. Wie immer erwartet Sie ein
-                                                                    bunter Strauß an Swing, Bebop, Soul, Funk und
-                                                                    angejazzten Pop-Titeln, mal gesungen, mal gehaucht,
-                                                                    mal instrumental; und wie immer stehen für den
-                                                                    Schlagzeuger und seine drei Musiker die musikalische
-                                                                    Qualität der Titel und die Überzeugung, dass genau
-                                                                    diese Titel es verdient hätten, bekannter zu sein,
-                                                                    vor dem Heischen um wohlfeilen Applaus, das so
-                                                                    mancher Dorffestcovercombo zu eigen ist.
-                                                                </p>
+                                                            <!-- 4) TWO-COLUMN: "Gelegenheit..." text LEFT | Tour poster RIGHT -->
+                                                            <table role="presentation" cellpadding="0" cellspacing="0"
+                                                                border="0" width="100%" class="two-col"
+                                                                style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="two-col-text" valign="top"
+                                                                            style="padding:0 0 14px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:140%;">
+                                                                            <p
+                                                                                style="margin:0;padding:0;line-height:140%;">
+                                                                                Gelegenheit, das neue Programm zu hören
+                                                                                (und sich wahlweise in die Titel oder
+                                                                                die die Band wieder unterstützende
+                                                                                hinreißende Gast-Sängerin Britta Neher
+                                                                                schockzuverlieben) bietet sich schon
+                                                                                bald – und das ist, wie Ihnen
+                                                                                wahrscheinlich spätestens jetzt klar
+                                                                                wird, der eigentliche Grund dieses Sie
+                                                                                <s>belästigenden</s> informierenden
+                                                                                Schreibens:
+                                                                            </p>
+                                                                        </td>
+                                                                        <td class="two-col-gap" valign="top" width="16"
+                                                                            style="width:16px;font-size:1px;line-height:1px;">
+                                                                            &nbsp;</td>
+                                                                        <td class="two-col-img" valign="top" width="220"
+                                                                            style="width:220px;padding:0 0 14px 0;">
+                                                                            <img src="https://www.drgrausig.de/newsletter_images/tourdaten_2026.jpg"
+                                                                                alt="Tour 2026 – alle Termine auf drgrausig.de"
+                                                                                width="200"
+                                                                                style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;max-width:200px;width:200px;height:auto;">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
 
-                                                                <!-- RIGHT-FLOATED TOUR POSTER. Replace src with the actual tour-poster URL. -->
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    <img class="float-img"
-                                                                        src="https://www.drgrausig.de/newsletter_images/tourdaten_2026.jpg"
-                                                                        alt="Tour 2026 – alle Termine auf drgrausig.de"
-                                                                        align="right" width="220"
-                                                                        style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;margin:4px 0 8px 16px;max-width:220px;width:220px;height:auto;float:right;">
-                                                                    Gelegenheit, das neue Programm zu hören (und sich
-                                                                    wahlweise in die Titel oder die die Band wieder
-                                                                    unterstützende hinreißende Gast-Sängerin Britta
-                                                                    Neher schockzuverlieben) bietet sich schon bald –
-                                                                    und das ist, wie Ihnen wahrscheinlich spätestens
-                                                                    jetzt klar wird, der eigentliche Grund dieses Sie
-                                                                    <s>belästigenden</s> informierenden Schreibens:
-                                                                </p>
+                                                            <!-- 5) Premiere announcement, full width -->
+                                                            <p
+                                                                style="margin:0 0 14px 0;padding:0;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                                                                <strong style="color:#0197c9;">Am nächsten Samstag, 23.
+                                                                    Mai, feiert Almost like being in love! ab 19:00
+                                                                    Premiere in der Alten Friedhofskirche St. Peter und
+                                                                    Paul zu Nusplingen.</strong>
+                                                            </p>
 
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    <strong style="color:#0197c9;">Am nächsten Samstag,
-                                                                        23. Mai, feiert Almost like being in love! ab
-                                                                        19:00 Premiere in der Alten Friedhofskirche St.
-                                                                        Peter und Paul zu Nusplingen.</strong>
-                                                                </p>
+                                                            <!-- 6) Tour reference, full width -->
+                                                            <p
+                                                                style="margin:0 0 14px 0;padding:0;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                                                                All denen, die die Band mit neuen und alten Titeln den
+                                                                Sommer über hören wollen, sei ein Blick auf nebenstehend
+                                                                Tourplan oder auf die stets aktualisierte Homepage <a
+                                                                    rel="noopener" href="https://www.drgrausig.de/"
+                                                                    target="_blank"
+                                                                    style="color:#0197c9;text-decoration:underline;">www.drgrausig.de</a>
+                                                                empfohlen.
+                                                            </p>
 
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    All denen, die die Band mit neuen und alten Titeln
-                                                                    den Sommer über hören wollen, sei ein Blick auf
-                                                                    nebenstehend Tourplan oder auf die stets
-                                                                    aktualisierte Homepage <a rel="noopener"
-                                                                        href="https://www.drgrausig.de/" target="_blank"
-                                                                        style="color:#0197c9;text-decoration:underline;">www.drgrausig.de</a>
-                                                                    empfohlen.
-                                                                </p>
+                                                            <div
+                                                                style="line-height:28px;font-size:14px;mso-line-height-rule:exactly;">
+                                                                &nbsp;</div>
 
-                                                                <!-- Clear both floats so the sign-off doesn't sit next to the images -->
-                                                                <div style="clear:both;line-height:0;font-size:0;">
-                                                                    &nbsp;</div>
+                                                            <!-- 7) Sign-off lines (cursive). Same recommendation: consider replacing with images. -->
+                                                            <p
+                                                                style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Monotype Corsiva','Brush Script MT','Lucida Handwriting','Apple Chancery','Snell Roundhand',cursive,Arial,sans-serif;font-size:25px;color:#0197c9;">
+                                                                Wo immer Sie uns hören werden – Wir freuen uns auf Sie
+                                                            </p>
 
-                                                                <div
-                                                                    style="line-height:28px;font-size:14px;mso-line-height-rule:exactly;">
-                                                                    &nbsp;</div>
+                                                            <p
+                                                                style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Monotype Corsiva','Brush Script MT','Lucida Handwriting','Apple Chancery','Snell Roundhand',cursive,Arial,sans-serif;font-size:30px;color:#0197c9;">
+                                                                Dr Grausig &amp; the Magictones
+                                                            </p>
 
-                                                                <p
-                                                                    style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Brush Script MT','Snell Roundhand',cursive;font-size:25px;color:#0197c9;">
-                                                                    Wo immer Sie uns hören werden – Wir freuen uns auf
-                                                                    Sie
-                                                                </p>
+                                                            <div
+                                                                style="line-height:42px;font-size:14px;mso-line-height-rule:exactly;">
+                                                                &nbsp;</div>
 
-                                                                <p
-                                                                    style="margin:0;padding:0;line-height:140%;font-family:'Mea Culpa','Brush Script MT','Snell Roundhand',cursive;font-size:30px;color:#0197c9;">
-                                                                    Dr Grausig &amp; the Magictones
-                                                                </p>
+                                                            <!-- 8) P.S. and footnote -->
+                                                            <p
+                                                                style="margin:0 0 14px 0;padding:0;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                                                                P.S.: Nur der Vollständigkeit halber weisen wir schon
+                                                                heute auf das große Saison-Finale bei der Tonkunst an
+                                                                der Tanke am 12. September hin.
+                                                            </p>
 
-                                                                <div
-                                                                    style="line-height:42px;font-size:14px;mso-line-height-rule:exactly;">
-                                                                    &nbsp;</div>
-
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;">
-                                                                    P.S.: Nur der Vollständigkeit halber weisen wir
-                                                                    schon heute auf das große Saison-Finale bei der
-                                                                    Tonkunst an der Tanke am 12. September hin.
-                                                                </p>
-
-                                                                <p
-                                                                    style="margin:0 0 14px 0;padding:0;line-height:140%;font-size:12px;">
-                                                                    <sup>1</sup> Pierce, A., Protter D. et al: Nucleus
-                                                                    accumbens dopamine release reflects the selective
-                                                                    nature of pair bonds, Current Biology, Vol. 34,
-                                                                    Issue 3, p. 515-530, Feb. 2024.
-                                                                </p>
-
-                                                            </div>
+                                                            <p
+                                                                style="margin:0 0 14px 0;padding:0;line-height:140%;font-family:Arial,Helvetica,sans-serif;font-size:12px;">
+                                                                <sup>1</sup> Pierce, A., Protter D. et al: Nucleus
+                                                                accumbens dopamine release reflects the selective nature
+                                                                of pair bonds, Current Biology, Vol. 34, Issue 3, p.
+                                                                515-530, Feb. 2024.
+                                                            </p>
 
                                                         </td>
                                                     </tr>
@@ -493,11 +548,11 @@
 
                                             <!-- Bottom image -->
                                             <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                border="0" style="font-family:arial,helvetica,sans-serif;">
+                                                border="0" style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 0px 0px;font-family:arial,helvetica,sans-serif;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 0px 0px;font-family:Arial,Helvetica,sans-serif;"
                                                             align="left">
                                                             <table width="100%" cellpadding="0" cellspacing="0"
                                                                 border="0">
@@ -548,14 +603,14 @@
 
                                             <table id="u_content_heading_5" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:24px 10px 10px 35px;font-family:arial,helvetica,sans-serif;mso-line-height-rule:exactly;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:24px 10px 10px 35px;font-family:Arial,Helvetica,sans-serif;mso-line-height-rule:exactly;"
                                                             align="left">
                                                             <h2 class="v-text-align v-font-size"
-                                                                style="margin:0;padding:0;color:#ffffff;line-height:140%;text-align:center;word-wrap:break-word;font-size:18px;font-weight:400;font-family:arial,helvetica,sans-serif;">
+                                                                style="margin:0;padding:0;color:#ffffff;line-height:140%;text-align:center;word-wrap:break-word;font-size:18px;font-weight:400;font-family:Arial,Helvetica,sans-serif;">
                                                                 Folgt uns gerne auch auf den sozialen Medien <br>oder
                                                                 auf unserer <a rel="noopener"
                                                                     href="https://www.drgrausig.de" target="_blank"
@@ -567,11 +622,11 @@
                                             </table>
 
                                             <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                border="0" style="font-family:arial,helvetica,sans-serif;">
+                                                border="0" style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 35px;font-family:arial,helvetica,sans-serif;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 35px;font-family:Arial,Helvetica,sans-serif;"
                                                             align="left">
                                                             <table height="0px" align="center" border="0"
                                                                 cellpadding="0" cellspacing="0" width="100%"
@@ -592,11 +647,11 @@
 
                                             <table id="u_content_social_1" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 35px;font-family:arial,helvetica,sans-serif;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 35px;font-family:Arial,Helvetica,sans-serif;"
                                                             align="left">
                                                             <div align="center">
                                                                 <div style="display:table;max-width:125px;">
@@ -682,11 +737,11 @@
 
                                             <table id="u_content_text_3" role="presentation" cellpadding="0"
                                                 cellspacing="0" width="100%" border="0"
-                                                style="font-family:arial,helvetica,sans-serif;">
+                                                style="font-family:Arial,Helvetica,sans-serif;">
                                                 <tbody>
                                                     <tr>
                                                         <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 10px 20px 30px;font-family:arial,helvetica,sans-serif;mso-line-height-rule:exactly;"
+                                                            style="overflow-wrap:break-word;word-break:break-word;padding:20px 10px 20px 30px;font-family:Arial,Helvetica,sans-serif;mso-line-height-rule:exactly;"
                                                             align="left">
                                                             <div class="v-text-align v-font-size"
                                                                 style="font-size:13px;color:#ffffff;line-height:140%;text-align:center;word-wrap:break-word;">
