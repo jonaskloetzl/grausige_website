@@ -100,62 +100,50 @@
 	<!-- End Header Area -->
 	<!-- start banner Area -->
 	<section class="banner-area relative" id="home">
-		<div class="slider">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<div class="hero-slider">
+			<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-ride="carousel"
+				data-interval="6000" data-pause="hover">
+				<ol class="carousel-indicators hero-indicators">
+					<li data-target="#heroCarousel" data-slide-to="0" class="active" aria-current="true"
+						aria-label="Slide 1"></li>
+					<li data-target="#heroCarousel" data-slide-to="1" aria-label="Slide 2"></li>
+					<li data-target="#heroCarousel" data-slide-to="2" aria-label="Slide 3"></li>
+				</ol>
 				<div class="carousel-inner" role="listbox">
-					<!-- Slide One - Set the background image for this slide in the line below -->
-					<div class="carousel-item active" style="background-image: url('img/Slider/slider_a.jpg'); ">
-						<div class="carousel-caption d-md-block">
-							<img src="img/000_LOGO_web.png" style="max-width:35%" alt="">
-							<!-- 								<h1>
-									We Believe that <br>
-									Interior beautifies the
-								</h1>
-				              <p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore  et dolore magna aliqua.	
-				              </p> -->
-						</div>
+					<div class="carousel-item active">
+						<div class="hero-slide-bg hero-slide-bg--a"></div>
+						<div class="hero-slide-overlay"></div>
 					</div>
-					<!-- Slide Two - Set the background image for this slide in the line below -->
-					<div class="carousel-item" style="background-image: url('img/Slider/slider_b.jpg'); ">
-						<div class="carousel-caption d-md-block">
-							<img src="img/000_LOGO_web.png" style="max-width:35%;" alt="">
-							<!-- <h2 class="text-uppercase">Wildlife Photography</h2>
-				              <p>T
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore  et dolore magna aliqua.	
-				              </p> -->
-						</div>
+					<div class="carousel-item">
+						<div class="hero-slide-bg hero-slide-bg--b"></div>
+						<div class="hero-slide-overlay"></div>
 					</div>
-					<!-- Slide Three - Set the background image for this slide in the line below -->
-					<div class="carousel-item" style="background-image: url('img/Slider/slider_c.jpg'); ">
-						<div class="carousel-caption d-md-block">
-							<img src="img/000_LOGO_web.png" style="max-width:35%;" alt="">
-							<!-- <h2 class="text-uppercase">Wildlife Photography</h2>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor
-								incididunt ut labore et dolore magna aliqua.
-							</p> -->
-						</div>
+					<div class="carousel-item">
+						<div class="hero-slide-bg hero-slide-bg--c"></div>
+						<div class="hero-slide-overlay"></div>
 					</div>
-					<!-- Slide Four - Set the background image for this slide in the line below -->
-					<!-- <div class="carousel-item active" style="background-image: url('img/slider_a.jpg')">
-				            <div class="carousel-caption d-md-block">
-								<h1>
-									We Believe that <br>
-									Interior beautifies the
-								</h1>
-				              <p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore  et dolore magna aliqua.	
-				              </p>
-				            </div>
-				          </div> -->
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<div class="hero-caption">
+					<img src="img/000_LOGO_web.png" class="hero-logo" alt="Dr. Grausig and the Magictones">
+				</div>
+				<a class="carousel-control-prev hero-control" href="#heroCarousel" role="button" data-slide="prev"
+					aria-label="Vorheriges Bild">
+					<span class="hero-control-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="15 18 9 12 15 6"></polyline>
+						</svg>
+					</span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<a class="carousel-control-next hero-control" href="#heroCarousel" role="button" data-slide="next"
+					aria-label="Nächstes Bild">
+					<span class="hero-control-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg>
+					</span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
