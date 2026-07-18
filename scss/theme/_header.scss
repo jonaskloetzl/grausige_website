@@ -1,6 +1,7 @@
 body {
 	position: relative;
 }
+
 .default-header {
 	padding: 5px 0;
 	position: absolute;
@@ -9,18 +10,23 @@ body {
 	width: 100%;
 	z-index: 9;
 }
+
 .menu-bar {
 	cursor: pointer;
+
 	span {
 		color: $white;
 		font-size: 24px;
 	}
 }
+
 .main-menubar {
 	position: relative;
 }
+
 nav {
 	margin-right: 70px;
+
 	@include media-breakpoint-down (sm) {
 		margin-right: 0;
 		position: absolute;
@@ -30,32 +36,39 @@ nav {
 		padding: 20px 0;
 		z-index: 5;
 		background: $white;
-		a{
-			color:$primary-color!important;
-			&:hover{
-				color:$primary-color;
-			}			
+
+		a {
+			color: $primary-color !important;
+
+			&:hover {
+				color: $primary-color;
+			}
 		}
 	}
+
 	@include transition();
-	 transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+
 	&.hide {
 		transform: scale(0);
 	}
+
 	a {
-		color:$white;
+		color: $white;
 		font-size: 12px;
 		font-weight: 500;
 		text-transform: uppercase;
 		margin: 0 25px;
 		display: inline-block;
+
 		@include media-breakpoint-down (sm) {
 			margin: 5px 25px;
 		}
-		&:hover{
-			color:$primary-color;
+
+		&:hover {
+			color: $primary-color;
 		}
-	}	
+	}
 }
 
 // Hero slider
@@ -264,6 +277,7 @@ nav {
 	from {
 		transform: scale(1);
 	}
+
 	to {
 		transform: scale(1.08);
 	}
@@ -273,6 +287,7 @@ nav {
 	from {
 		transform: scaleX(0);
 	}
+
 	to {
 		transform: scaleX(1);
 	}
@@ -280,6 +295,7 @@ nav {
 
 @media (max-width: 768px) {
 	.hero-carousel {
+
 		.carousel-inner,
 		.carousel-item {
 			height: clamp(360px, 72vh, 520px);
@@ -335,6 +351,3 @@ nav {
 		transform: scaleX(1);
 	}
 }
-
-
-
