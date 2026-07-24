@@ -2253,11 +2253,11 @@ nav a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
 
   .hero-carousel .carousel-inner,
   .hero-carousel .carousel-item {
-    height: clamp(360px, 72vh, 520px);
+    height: clamp(360px, 72vh, 320px);
     min-height: 360px;
   }
 
@@ -2270,7 +2270,7 @@ nav a:hover {
   }
 
   .hero-logo {
-    width: min(23vw, 220px);
+    width: min(13vw, 220px);
   }
 
   .hero-indicators {
