@@ -2257,7 +2257,7 @@ nav a:hover {
 
   .hero-carousel .carousel-inner,
   .hero-carousel .carousel-item {
-    height: clamp(360px, 72vh, 320px);
+    height: clamp(360px, 72vh, 220px);
     min-height: 360px;
   }
 
