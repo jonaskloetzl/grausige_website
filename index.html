@@ -337,23 +337,23 @@
 				</div>
 			</div>
 			<div class="gal">
-				<a href="img/Galerie/Jonas_1.jpg"><img src="img/Galerie/Jonas_1.jpg" alt=""></a>
-				<a href="img/Galerie/Marcel_1.jpg"><img src="img/Galerie/Marcel_1.jpg" alt=""></a>
-				<a href="img/Galerie/Marc_1.jpg"><img src="img/Galerie/Marc_1.jpg" alt=""></a>
-				<a href="img/Galerie/Tobi_1.jpg"><img src="img/Galerie/Tobi_1.jpg" alt=""></a>
-				<a href="img/Galerie/Jonas_2.jpg"><img src="img/Galerie/Jonas_2.jpg" alt=""></a>
-				<a href="img/Galerie/Marcel_2.jpg"><img src="img/Galerie/Marcel_2.jpg" alt=""></a>
-				<a href="img/Galerie/Marc_2.jpg"><img src="img/Galerie/Marc_2.jpg" alt=""></a>
-				<!-- <a href="img/Galerie/Tobi_2.jpg"><img src="img/Galerie/Tobi_2.jpg" alt=""></a> -->
-				<a href="img/Galerie/Jonas_3.jpg"><img src="img/Galerie/Jonas_3.jpg" alt=""></a>
-				<a href="img/Galerie/Marcel_3.jpg"><img src="img/Galerie/Marcel_3.jpg" alt=""></a>
-				<a href="img/Galerie/Marc_3.jpg"><img src="img/Galerie/Marc_3.jpg" alt=""></a>
-				<!-- <a href="img/Galerie/Tobi_3.jpg"><img src="img/Galerie/Tobi_3.jpg" alt=""></a> -->
-				<a href="img/Galerie/Jonas_4.jpg"><img src="img/Galerie/Jonas_4.jpg" alt=""></a>
-				<a href="img/Galerie/Marcel_4.jpg"><img src="img/Galerie/Marcel_4.jpg" alt=""></a>
-				<a href="img/Galerie/Marc_4.jpg"><img src="img/Galerie/Marc_4.jpg" alt=""></a>
-				<!-- <a href="img/Galerie/Jonas_5.jpg"><img src="img/Galerie/Jonas_5.jpg" alt=""></a> -->
-				<a href="img/Galerie/Marcel_5.jpg"><img src="img/Galerie/Marcel_5.jpg" alt=""></a>
+				<style>
+					.gallery-grid{ display:grid; grid-template-columns: repeat(6, 1fr); gap:8px; align-items:stretch; }
+					.gallery-grid .grid-item img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:6px; }
+					.grid-item{ overflow:hidden; display:block; }
+					.grid-item--large{ grid-column: span 3; grid-row: span 2; }
+					.grid-item--tall{ grid-row: span 2; grid-column: span 2; }
+					.grid-item--small{ grid-column: span 2; grid-row: span 1; }
+					@media (max-width:900px){ .gallery-grid{ grid-template-columns: repeat(3,1fr); } .grid-item--large{ grid-column: span 2; } .grid-item--tall{ grid-row: span 2; } }
+					@media (max-width:480px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } }
+					.gallery-controls .genric-btn{ padding: .5rem 1rem; }
+				</style>
+				<div class="gallery-controls" style="text-align:center;margin-bottom:1rem;">
+					<button id="shuffle-btn" class="genric-btn primary-border circle">Zufällige Bilder</button>
+				</div>
+				<div id="gallery-grid" class="gallery-grid" aria-live="polite">
+					<!-- Images are inserted here by JavaScript -->
+				</div>
 			</div>
 			<div class="subsection-top-border">
 				<div class="row justify-content-center">
@@ -1389,6 +1389,74 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/simple-lightbox.min.js"></script>
 	<script src="js/main.js"></script>
+
+<script>
+(function(){
+  const allImages = [
+    "img/Galerie/Jonas_1.jpg",
+    "img/Galerie/Marcel_1.jpg",
+    "img/Galerie/Marc_1.jpg",
+    "img/Galerie/Tobi_1.jpg",
+    "img/Galerie/Jonas_2.jpg",
+    "img/Galerie/Marcel_2.jpg",
+    "img/Galerie/Marc_2.jpg",
+    "img/Galerie/Jonas_3.jpg",
+    "img/Galerie/Marcel_3.jpg",
+    "img/Galerie/Marc_3.jpg",
+    "img/Galerie/Jonas_4.jpg",
+    "img/Galerie/Marcel_4.jpg",
+    "img/Galerie/Marc_4.jpg",
+    "img/Galerie/Marcel_5.jpg"
+  ];
+
+  const grid = document.getElementById('gallery-grid');
+  const btn = document.getElementById('shuffle-btn');
+
+  function pickRandom(n){
+    const copy = allImages.slice();
+    const pick = [];
+    while(pick.length < n && copy.length){
+      const i = Math.floor(Math.random()*copy.length);
+      pick.push(copy.splice(i,1)[0]);
+    }
+    return pick;
+  }
+
+  function clearGrid(){ grid.innerHTML = ''; }
+
+  function layoutClass(idx){
+    const patterns = ['','large','','','tall','','small',''];
+    const p = patterns[idx % patterns.length];
+    return p ? ' grid-item--'+p : '';
+  }
+
+  function show(images){
+    clearGrid();
+    images.forEach((src, idx)=>{
+      const a = document.createElement('a');
+      a.href = src;
+      a.className = 'grid-item' + layoutClass(idx);
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.loading = 'lazy';
+      a.appendChild(img);
+      grid.appendChild(a);
+    });
+
+    if (window.SimpleLightbox) {
+      if(window._myLightbox) { try{ window._myLightbox.destroy(); }catch(e){} }
+      window._myLightbox = new SimpleLightbox('.gallery-grid a', {});
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    show(pickRandom(6));
+    if(btn) btn.addEventListener('click', function(){ show(pickRandom(6)); });
+  });
+})();
+</script>
+
 </body>
 
 </html>
