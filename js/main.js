@@ -65,7 +65,10 @@ $(document).ready(function(){
   };
 
 
-  $('.gal a').simpleLightbox();
+  $('.gal a').simpleLightbox({
+  	captionsData: 'data-caption',
+  	captionDelay: 200
+  });
 
 
   // Select all links with hashes
