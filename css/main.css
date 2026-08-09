@@ -2632,6 +2632,115 @@ nav a:hover {
   }
 }
 
+.gallery-mosaic-controls {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.shuffle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 32px;
+  border: 2px solid #982C3A;
+  border-radius: 30px;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.shuffle-btn:hover,
+.shuffle-btn:focus {
+  background: #982C3A;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 8px 20px rgba(152, 44, 58, 0.4);
+}
+
+.shuffle-btn-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.shuffle-btn.is-spinning .shuffle-btn-icon {
+  -webkit-animation: shuffle-spin 0.5s ease;
+  animation: shuffle-spin 0.5s ease;
+}
+
+@-webkit-keyframes shuffle-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes shuffle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery-mosaic-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-mosaic-grid .mosaic-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transform: scale(0.94);
+  transform: scale(0.94);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-mosaic-grid.is-visible .mosaic-item {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.gallery-mosaic-grid .mosaic-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-mosaic-grid .mosaic-item:hover img {
+  -webkit-transform: scale(1.06);
+  transform: scale(1.06);
+  filter: brightness(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-mosaic-grid .mosaic-item,
+  .gallery-mosaic-grid .mosaic-item img {
+    transition: none;
+  }
+  .shuffle-btn.is-spinning .shuffle-btn-icon {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
 .single-feature .icon {
   margin-right: 20px;
 }

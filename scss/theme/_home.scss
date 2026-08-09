@@ -265,6 +265,108 @@
 }
 
 
+// Bilder-Mosaik mit zufaelliger Auswahl, siehe js/gallery.js
+
+.gallery-mosaic-controls {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.shuffle-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 13px 32px;
+	border: 2px solid #982C3A;
+	border-radius: 30px;
+	background: transparent;
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: .5px;
+	line-height: 1;
+	cursor: pointer;
+	transition: all .3s ease 0s;
+
+	&:hover,
+	&:focus {
+		background: #982C3A;
+		color: #fff;
+		outline: none;
+		box-shadow: 0 8px 20px rgba(#982C3A, .4);
+	}
+
+	&.is-spinning .shuffle-btn-icon {
+		animation: shuffle-spin .5s ease;
+	}
+}
+
+.shuffle-btn-icon {
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+@keyframes shuffle-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.gallery-mosaic-grid {
+	display: grid;
+	gap: 10px;
+
+	// Spalten und Reihenhoehe werden in js/gallery.js gesetzt.
+
+	.mosaic-item {
+		display: block;
+		overflow: hidden;
+		border-radius: 4px;
+		opacity: 0;
+		transform: scale(.94);
+		transition: opacity .5s ease, transform .5s ease;
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			transition: transform .5s ease, filter .5s ease;
+		}
+
+		&:hover img {
+			transform: scale(1.06);
+			filter: brightness(1.1);
+		}
+	}
+
+	&.is-visible .mosaic-item {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.gallery-mosaic-grid .mosaic-item,
+	.gallery-mosaic-grid .mosaic-item img {
+		transition: none;
+	}
+
+	.shuffle-btn.is-spinning .shuffle-btn-icon {
+		animation: none;
+	}
+}
+
+
 
 //--------- End gallery Area -------------//
 

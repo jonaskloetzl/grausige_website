@@ -83,10 +83,10 @@
 					</a>
 					<div class="main-menubar d-flex align-items-center">
 						<nav class="hide">
-							<a href="#home">Home</a>
 							<a href="#about">Über uns</a>
 							<a href="#gallery">Bilder</a>
 							<a href="#band">Die Band</a>
+							<a href="#auftritte">Auftritte</a>
 							<a href="#contact">Kontakt</a>
 							<!-- <a href="generic.html">Generic</a> -->
 							<!-- <a href="elements.html">Elements</a>							 -->
@@ -325,6 +325,7 @@
 	</section> -->
 
 	<!-- Start gallery Area -->
+	<!-- Change Number of images via | var VISIBLE = 5; | in /Users/jonasklotzl/Documents/GitHub/grausige_website/js/gallery.js -->
 	<section class="gallery-area section-gap" id="gallery">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -336,23 +337,22 @@
 					</p> -->
 				</div>
 			</div>
-			<div class="gal">
-				<style>
-					.gallery-grid{ display:grid; grid-template-columns: repeat(6, 1fr); gap:8px; align-items:stretch; }
-					.gallery-grid .grid-item img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:6px; }
-					.grid-item{ overflow:hidden; display:block; }
-					.grid-item--large{ grid-column: span 3; grid-row: span 2; }
-					.grid-item--tall{ grid-row: span 2; grid-column: span 2; }
-					.grid-item--small{ grid-column: span 2; grid-row: span 1; }
-					@media (max-width:900px){ .gallery-grid{ grid-template-columns: repeat(3,1fr); } .grid-item--large{ grid-column: span 2; } .grid-item--tall{ grid-row: span 2; } }
-					@media (max-width:480px){ .gallery-grid{ grid-template-columns: repeat(2,1fr); } }
-					.gallery-controls .genric-btn{ padding: .5rem 1rem; }
-				</style>
-				<div class="gallery-controls" style="text-align:center;margin-bottom:1rem;">
-					<button id="shuffle-btn" class="genric-btn primary-border circle">Zufällige Bilder</button>
+			<div class="gallery-mosaic">
+				<div class="gallery-mosaic-controls">
+					<button type="button" id="gallery-shuffle" class="shuffle-btn">
+						<svg class="shuffle-btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path d="M16 4l4 4-4 4" />
+							<path d="M3 8h5c2 0 3 1 4 2.5" />
+							<path d="M16 12l4 4-4 4" />
+							<path d="M3 16h5c2 0 3-1 4-2.5" />
+							<path d="M14 8h6" />
+							<path d="M14 16h6" />
+						</svg>
+						<span>Mehr grausige Bilder</span>
+					</button>
 				</div>
-				<div id="gallery-grid" class="gallery-grid" aria-live="polite">
-					<!-- Images are inserted here by JavaScript -->
+				<div id="gallery-grid" class="gallery-mosaic-grid" aria-live="polite">
+					<!-- Bilder werden von js/gallery.js eingefügt -->
 				</div>
 			</div>
 			<div class="subsection-top-border">
@@ -497,18 +497,7 @@
 
 
 
-						<div class="table-row">
-							<div class="date">07. August 2026</div>
-							<div class="place">Fridingen</div>
-							<div class="title">Jazz im&nbsp;<a href="https://bahnhof123.de/#aktuelles"
-									target="_blank"><u>Bahnhof 123</u></a>
-								<!--&nbsp;<a href="Poster/Fridingen_Bahnhof_123_2024.jpeg"
-									target="_blank"><u>(Infos)</u></a></s>
-								&nbsp;<a
-									href="Poster/Fridinooga_Choo_Choo.pdf" target="_blank"><u>(Lyrics)</u></a>
-									-->
-							</div>
-						</div>
+
 						<div class="table-row">
 							<div class="date">15. August 2026</div>
 							<div class="place">München</div>
@@ -637,6 +626,19 @@
 								<div class="title">Art</div>
 							</div>
 
+
+							<div class="table-row">
+								<div class="date">07. August 2026</div>
+								<div class="place">Fridingen</div>
+								<div class="title">Jazz im&nbsp;<a href="https://bahnhof123.de/#aktuelles"
+										target="_blank"><u>Bahnhof 123</u></a>
+									<!--&nbsp;<a href="Poster/Fridingen_Bahnhof_123_2024.jpeg"
+									target="_blank"><u>(Infos)</u></a></s>
+								&nbsp;<a
+									href="Poster/Fridinooga_Choo_Choo.pdf" target="_blank"><u>(Lyrics)</u></a>
+									-->
+								</div>
+							</div>
 							<div class="table-row">
 								<div class="date">25. Juli 2026</div>
 								<div class="place">Iznang</div>
@@ -1273,55 +1275,6 @@
 	</section>
 
 
-	<!-- Start contact Area
-	<section class="contact-area" id="contact">
-		<div class="container-fluid">
-			<div class="subsection-top-border">
-				<div class="row d-flex justify-content-end align-items-center">
-					<div class="col-lg-5 col-md-12 contact-left no-padding">
-						<img class="img-fluid" src="img/Rest/contact.jpg" alt="">
-					</div>
-					<div class="col-lg-7 col-md-12 contact-right no-padding">
-						<h1>Kontaktieren Sie uns</h1>
-						<p>
-							Sie wollen, dass der Schlagzeuger und die drei Musiker bei Ihnen aufspielen?
-							Dann tippen Sie Ihren Namen, Ihre E-Mail-Adresse und Ihr Begehr in unten stehende Felder
-							oder
-							schreiben Sie uns eine Email an <a
-								href="mailto:info@drgrausig.de"><b>info@drgrausig.de</b></a>
-						</p>
-						<form class="booking-form" action="anothercontact.php" method="post">
-							<div class="row">
-								<div class="col-lg-12 d-flex flex-column">
-									<input type="text" id="name" name="visitor_name" placeholder="Ihr Name"
-										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'"
-										class="common-input mt-10" required="" required>
-									<p style="margin-bottom:0.5cm;"></p>
-								</div>
-								<div class="col-lg-12 d-flex flex-column">
-									<input type="email" id="email" name="visitor_email"
-										placeholder="Ihre E-Mail Adresse" required>
-									<p style="margin-bottom:0.5cm;"></p>
-								</div>
-								<div class="col-lg-12 d-flex flex-column">
-									<textarea id="message" name="visitor_message" placeholder="Ihre Nachricht"
-										required></textarea>
-								</div>
-								<div class="col-lg-12 d-flex justify-content-end send-btn">
-									<button class="submit-btn primary-btn mt-20 text-uppercase ">Nachricht senden<span
-											class="lnr lnr-arrow-right"></span></button>
-								</div>
-								<div class="alert-msg"></div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</section>
-	 End contact Area -->
-
 	<!-- Start alternative contact Area -->
 	<section class="contact-area" id="contact">
 		<div class="container-fluid">
@@ -1389,73 +1342,8 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/simple-lightbox.min.js"></script>
 	<script src="js/main.js"></script>
-
-<script>
-(function(){
-  const allImages = [
-    "img/Galerie/Jonas_1.jpg",
-    "img/Galerie/Marcel_1.jpg",
-    "img/Galerie/Marc_1.jpg",
-    "img/Galerie/Tobi_1.jpg",
-    "img/Galerie/Jonas_2.jpg",
-    "img/Galerie/Marcel_2.jpg",
-    "img/Galerie/Marc_2.jpg",
-    "img/Galerie/Jonas_3.jpg",
-    "img/Galerie/Marcel_3.jpg",
-    "img/Galerie/Marc_3.jpg",
-    "img/Galerie/Jonas_4.jpg",
-    "img/Galerie/Marcel_4.jpg",
-    "img/Galerie/Marc_4.jpg",
-    "img/Galerie/Marcel_5.jpg"
-  ];
-
-  const grid = document.getElementById('gallery-grid');
-  const btn = document.getElementById('shuffle-btn');
-
-  function pickRandom(n){
-    const copy = allImages.slice();
-    const pick = [];
-    while(pick.length < n && copy.length){
-      const i = Math.floor(Math.random()*copy.length);
-      pick.push(copy.splice(i,1)[0]);
-    }
-    return pick;
-  }
-
-  function clearGrid(){ grid.innerHTML = ''; }
-
-  function layoutClass(idx){
-    const patterns = ['','large','','','tall','','small',''];
-    const p = patterns[idx % patterns.length];
-    return p ? ' grid-item--'+p : '';
-  }
-
-  function show(images){
-    clearGrid();
-    images.forEach((src, idx)=>{
-      const a = document.createElement('a');
-      a.href = src;
-      a.className = 'grid-item' + layoutClass(idx);
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = '';
-      img.loading = 'lazy';
-      a.appendChild(img);
-      grid.appendChild(a);
-    });
-
-    if (window.SimpleLightbox) {
-      if(window._myLightbox) { try{ window._myLightbox.destroy(); }catch(e){} }
-      window._myLightbox = new SimpleLightbox('.gallery-grid a', {});
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', function(){
-    show(pickRandom(6));
-    if(btn) btn.addEventListener('click', function(){ show(pickRandom(6)); });
-  });
-})();
-</script>
+	<script src="js/gallery-images.js"></script>
+	<script src="js/gallery.js"></script>
 
 </body>
 
